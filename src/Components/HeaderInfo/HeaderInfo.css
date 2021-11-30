@@ -10,6 +10,18 @@
   
 }
 
+.pie {
+  border: 1Px;
+  /* border-radius: 5px; */
+  background: black;
+  /* display: flex; */
+  color: white;
+  /* height: 10px; */
+  overflow: hidden;
+
+
+}
+
 
 .top-left {
     float: left;
@@ -28,7 +40,7 @@
 
 .top-right {
     float: right;
-    margin: 0px 300px 0px 0px;
+    margin: 0px 20px 0px 0px;
 }
 
 
