@@ -5,10 +5,10 @@ import "./Info.css";
 
 class Info extends Component {
 
-    //Obligatorio si se usan defaultProps
-    constructor(props){  
-        super(props)  
-        }  
+    //No es Obligatorio si se usan defaultProps
+    // constructor(props){  
+    //     super(props)  
+    //     }  
 
 
     render() {
@@ -26,7 +26,7 @@ class Info extends Component {
                 <div class="top-right">
 
                     {
-                        this.props.msg !='' ?
+                        this.props.msg !=='' ?
                         <ul>
                             <li>{this.props.msg}</li>
                         </ul>

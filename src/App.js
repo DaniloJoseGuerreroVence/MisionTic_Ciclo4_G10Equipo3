@@ -1,7 +1,8 @@
 import React from 'react';
 
 
-import HeaderInfo from './Components/Info/';
+import Info from './Components/Info/';
+import Footer from './Components/Footer/';
 //import VentanaModal from './Components/VentanaModal/';
 
 
@@ -13,6 +14,7 @@ import { Button, Carousel, Nav, Navbar, Container, Form, FormControl, Card } fro
 import im1 from '../src/assets/img/b1.jpg';
 import im2 from '../src/assets/img/b2.jpg';
 import im3 from '../src/assets/img/b3.jpg';
+
 
 
 
@@ -38,17 +40,18 @@ import im3 from '../src/assets/img/b3.jpg';
 // }
 
 function App() {
+  //  let csss ={background: '#1565c0', color: 'white', height: 300 };
   return (
     <div>
       <header>
 
-       {/*ejemplo  uso de iconos */}
-       {/* <Icon/> */}
-       
-       {/*ejemplo uso de ventana modal */}
-       {/* <VentanaModal textoBoton= "Presioname" titulo="Prueba" mensaje="I will not close if you click outside me"/>  */}
+        {/*ejemplo  uso de iconos */}
+        {/* <Icon/> */}
 
-        <HeaderInfo estilo="cabezera" />
+        {/*ejemplo uso de ventana modal */}
+        {/* <VentanaModal textoBoton= "Presioname" titulo="Prueba" mensaje="I will not close if you click outside me"/>  */}
+
+        <Info estilo="cabezera" />
 
         <Navbar style={{ background: '#0d59af', }} variant="dark" expand="lg">
           <Container fluid>
@@ -61,7 +64,7 @@ function App() {
                 style={{ maxHeight: '100px' }}
                 navbarScroll
               >
-                <Nav.Link style={{ marginLeft: 50 }} href="#action1">Home</Nav.Link>              
+                <Nav.Link style={{ marginLeft: 50 }} href="#action1">Home</Nav.Link>
 
               </Nav>
 
@@ -120,40 +123,111 @@ function App() {
       <h1>Eventos disponibles para apostar</h1>
 
 
-      <Card style={{ width: '18rem' }}>
-        <Card.Body>
-          <Card.Title>Card Title</Card.Title>
-          <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-          <Card.Text>
-            Some quick example text to build on the card title and make up the bulk of
-            the card's content.
-          </Card.Text>
-          <Card.Link href="#">Card Link</Card.Link>
-          <Card.Link href="#">Another Link</Card.Link>
-        </Card.Body>
-      </Card>
-      
 
-      <div className="row" style={{ background: '#1565c0', color: 'white', height: 300 }}>
-        <div className="col-3">
-          <div className="fs-4 " > About </div>
-          <div> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</div>
-        </div>
-        <div className="col-3">
-          <div className="fs-4 " > My Account </div>
-          <div> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</div>
-        </div>
-        <div className="col-3">
-          <div className="fs-4 " > Information </div>
-          <div> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</div>
-        </div>
-        <div className="col-3">
-          <div className="fs-4 " > Contacts </div>
-          <div> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</div>
-        </div>
-      </div>
-     
-      <HeaderInfo estilo="pie" msg="© 2016 New Shop . All rights reserved | Design by W3layouts" />
+
+      <Footer
+        estilos={{ border: '1 px solid #d0d0d0' }}
+        datos={
+          [
+            {
+              titulo: '',
+              descripccion:
+                <Card style={{ width: '18rem' }}>
+                  <Card.Body>
+                    <Card.Title>Card Title</Card.Title>
+                    <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
+                    <Card.Text>
+                      Some quick example text to build on the card title and make up the bulk of
+                      the card's content.
+                    </Card.Text>
+                    <Card.Link href="#">Card Link</Card.Link>
+                    <Card.Link href="#">Another Link</Card.Link>
+                  </Card.Body>
+                </Card>
+            },
+            {
+              titulo: '',
+              descripccion:
+                <Card style={{ width: '18rem' }}>
+                  <Card.Body>
+                    <Card.Title>Card Title</Card.Title>
+                    <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
+                    <Card.Text>
+                      Some quick example text to build on the card title and make up the bulk of
+                      the card's content.
+                    </Card.Text>
+                    <Card.Link href="#">Card Link</Card.Link>
+                    <Card.Link href="#">Another Link</Card.Link>
+                  </Card.Body>
+                </Card>
+            },
+            {
+              titulo: '',
+              descripccion:
+                <Card style={{ width: '18rem' }}>
+                  <Card.Body>
+                    <Card.Title>Card Title</Card.Title>
+                    <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
+                    <Card.Text>
+                      Some quick example text to build on the card title and make up the bulk of
+                      the card's content.
+                    </Card.Text>
+                    <Card.Link href="#">Card Link</Card.Link>
+                    <Card.Link href="#">Another Link</Card.Link>
+                  </Card.Body>
+                </Card>
+            },
+            {
+              titulo: '',
+              descripccion:
+                <Card style={{ width: '18rem' }}>
+                  <Card.Body>
+                    <Card.Title>Card Title</Card.Title>
+                    <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
+                    <Card.Text>
+                      Some quick example text to build on the card title and make up the bulk of
+                      the card's content.
+                    </Card.Text>
+                    <Card.Link href="#">Card Link</Card.Link>
+                    <Card.Link href="#">Another Link</Card.Link>
+                  </Card.Body>
+                </Card>
+            }
+
+          ]
+        }
+      />
+
+
+
+      <Footer
+        estilos={{ background: '#1565c0', color: 'white', height: 300 }}
+        datos={
+          [
+            {
+              titulo: 'About',
+              descripccion: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.'
+            },
+            {
+              titulo: 'My Account',
+              descripccion: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.'
+            },
+            {
+              titulo: 'Information',
+              descripccion: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.'
+            },
+            {
+              titulo: 'Contacts',
+              descripccion: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.'
+            },
+
+          ]
+        }
+      />
+
+
+
+      <Info estilo="pie" msg="© 2016 New Shop . All rights reserved | Design by W3layouts" />
 
     </div>
 
