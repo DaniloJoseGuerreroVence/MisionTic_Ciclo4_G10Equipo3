@@ -1,14 +1,31 @@
-import { useState } from 'react';
-import HeaderInfo from './Components/HeaderInfo/';
-// import "./components/HeaderInfo/Header.module.css"
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, Carousel, Nav, Navbar, Container, NavDropdown, Form, FormControl, Card, Modal } from 'react-bootstrap';
+import React from 'react';
 
-// import im1 from '../../public/b1.jpg';
+
+import HeaderInfo from './Components/Info/';
+//import VentanaModal from './Components/VentanaModal/';
+
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button, Carousel, Nav, Navbar, Container, Form, FormControl, Card } from 'react-bootstrap';
+// import { FaBeer } from 'react-icons/fa'; //ejemplo uso de iconos 
+
+
 import im1 from '../src/assets/img/b1.jpg';
 import im2 from '../src/assets/img/b2.jpg';
 import im3 from '../src/assets/img/b3.jpg';
 
+
+
+//ejemplo uso de iconos
+
+// class Icon extends React.Component {
+//   render() {
+//     return <h3> Lets go for a <FaBeer style={{color: 'blue',}} />? </h3>
+//   }
+// }
+
+
+//ejemplo componente de funcion
 
 // const App = () =>{
 //   return (
@@ -24,8 +41,14 @@ function App() {
   return (
     <div>
       <header>
-        <HeaderInfo estilo="cabezera" msg=" " />
 
+       {/*ejemplo  uso de iconos */}
+       {/* <Icon/> */}
+       
+       {/*ejemplo uso de ventana modal */}
+       {/* <VentanaModal textoBoton= "Presioname" titulo="Prueba" mensaje="I will not close if you click outside me"/>  */}
+
+        <HeaderInfo estilo="cabezera" />
 
         <Navbar style={{ background: '#0d59af', }} variant="dark" expand="lg">
           <Container fluid>
@@ -38,17 +61,7 @@ function App() {
                 style={{ maxHeight: '100px' }}
                 navbarScroll
               >
-
-                <Nav.Link style={{ marginLeft: 50 }} href="#action1">Home</Nav.Link>
-
-                {/* <NavDropdown title="Link" id="navbarScrollingDropdown">
-                  <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action5">
-                    Something else here
-                  </NavDropdown.Item>
-                </NavDropdown> */}
+                <Nav.Link style={{ marginLeft: 50 }} href="#action1">Home</Nav.Link>              
 
               </Nav>
 
@@ -64,7 +77,6 @@ function App() {
             </Navbar.Collapse>
           </Container>
         </Navbar>
-
       </header>
 
 
@@ -86,7 +98,6 @@ function App() {
             src={im2}
             alt="Second slide"
           />
-
           <Carousel.Caption>
             <h3>Second slide label</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -98,7 +109,6 @@ function App() {
             src={im3}
             alt="Third slide"
           />
-
           <Carousel.Caption>
             <h3>Third slide label</h3>
             <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
@@ -122,8 +132,7 @@ function App() {
           <Card.Link href="#">Another Link</Card.Link>
         </Card.Body>
       </Card>
-
-      {/* <Example /> */}
+      
 
       <div className="row" style={{ background: '#1565c0', color: 'white', height: 300 }}>
         <div className="col-3">
@@ -143,67 +152,12 @@ function App() {
           <div> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</div>
         </div>
       </div>
-
-
-      {/* <div className="container">
-<div className="row">
-  <div className="col">
-    Column
-  </div>
-  <div className="col">
-    Column
-  </div>
-  <div className="col">
-    Column
-  </div>
-</div>
-</div> */}
-
-<HeaderInfo estilo="pie" msg="© 2016 New Shop . All rights reserved | Design by W3layouts" />
+     
+      <HeaderInfo estilo="pie" msg="© 2016 New Shop . All rights reserved | Design by W3layouts" />
 
     </div>
 
   );
-}
-
-
-function Example() {
-
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
-  return (
-    <>
-      <Button variant="primary" onClick={handleShow}>
-        Launch static backdrop modal
-      </Button>
-
-      <Modal
-        show={show}
-        onHide={handleClose}
-        backdrop="static"
-        keyboard={false}
-      >
-        <Modal.Header closeButton>
-          <Modal.Title>Modal title</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          I will not close if you click outside me. Don't even try to press
-          escape key.
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary">Understood</Button>
-        </Modal.Footer>
-      </Modal>
-    </>
-  );
-
-  // render(<Example />);
 }
 
 export default App;
