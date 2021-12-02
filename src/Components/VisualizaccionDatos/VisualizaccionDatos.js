@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
 
-class Footer extends Component {
+class VisualizaccionDatos extends Component {
     state = {}
     render() {
         return (
-            <div className="row" style={this.props.estilos.join(",border:'1px solid Black'")}>
+            <div className="row" style={this.props.estilos}>
 
                 {
                     this.props.datos.map(
-                        (dato) => (
+                        (dato) => {
                             //style={{border: '1px solid Black',}}
-                            <div className="col-3"  > 
-                                <div className="fs-4 " > {dato.titulo}  </div>
-                                <div > {dato.descripccion}</div>
-                            </div>
-                        )
+                            return (
+                                <div className="col-3" style={dato.estilos}>
+                                    <div className="fs-4 " > {dato.titulo}  </div>
+                                    <div > {dato.descripccion}</div>
+                                </div>
+                            );
+                        }
                     )
                 }
 
@@ -39,12 +41,12 @@ class Footer extends Component {
             //         <div> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</div>
             //     </div> 
             // </div>
-            
-            
+
+
         );
     }
 }
 
-export default Footer;
+export default VisualizaccionDatos;
 
 
