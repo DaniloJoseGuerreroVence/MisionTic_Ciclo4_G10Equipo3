@@ -53,16 +53,12 @@ const Index = (props) => {
                 <Info estilo="cabezera" />
 
                 <Navbar style={{ background: '#0d59af', }} variant="dark" expand="lg">
-                    <Container fluid>
-                        {/* style={{ fontSize: 50, marginLeft: 185 }} */}
+                    <Container fluid>                        
                         <Navbar.Brand >
-                            {/* <div class='row'>
-                <div class="col-10 offset-0" style={{ border: '1px solid #d0d0d0' }}>
-                  Badminton Play
-                </div>
-              </div> */}
-                            {/* <span class="fs-1 col-3 offset-2" >Badminton Play</span> */}
-                            <span style={{ fontSize: 50, marginLeft: 185 }} >Badminton Play</span>
+
+                            <span className="fs-1 col-md-4 offset-4" >Badminton Play</span>
+                            {/* <span style={{ fontSize: 50, marginLeft: 185 }} >Badminton Play</span> */}
+
                         </Navbar.Brand>
                         <Navbar.Toggle aria-controls="navbarScroll" />
                         <Navbar.Collapse id="navbarScroll">
@@ -72,7 +68,7 @@ const Index = (props) => {
                                 style={{ maxHeight: '100px' }}
                                 navbarScroll
                             >
-                                <Nav.Link style={{ marginLeft: 50 }} href="#action1">Home</Nav.Link>
+                                <Nav.Link style={{ marginLeft: 150 }} href="#action1">Home</Nav.Link>
 
                             </Nav>
 
@@ -137,13 +133,15 @@ const Index = (props) => {
         adasdasdasdad
       </div> */}
 
+{/* <span class="fs-1 col-md-4 offset-4" >Badminton Play</span> */}
+
             <VisualizaccionDatos
                 //border: '1px solid #d0d0d0'
-                estilos={{ margin: '50px 250px 50px 250px' }}
+                // estilos={{ margin: '50px 250px 50px 250px' }}
+                clases="col-md-10 offset-md-1"
                 datos={
                     [
-                        {
-                            estilos: { marginTop: '10px' },
+                        {                            
                             titulo: '',
                             descripccion:
                                 <Card >
@@ -160,7 +158,7 @@ const Index = (props) => {
                                 </Card>
                         },
                         {
-                            estilos: { marginTop: '10px' },
+                            
                             titulo: '',
                             descripccion:
                                 <Card >
@@ -177,7 +175,7 @@ const Index = (props) => {
                                 </Card>
                         },
                         {
-                            estilos: { marginTop: '10px' },
+                           
                             titulo: '',
                             descripccion:
                                 <Card >
@@ -194,7 +192,7 @@ const Index = (props) => {
                                 </Card>
                         },
                         {
-                            estilos: { marginTop: '10px' },
+                           
                             titulo: '',
                             descripccion:
                                 <Card >
@@ -212,7 +210,7 @@ const Index = (props) => {
                         },
 
                         {
-                            estilos: { marginTop: '10px' },
+                           
                             titulo: '',
                             descripccion:
                                 <Card >
@@ -229,7 +227,7 @@ const Index = (props) => {
                                 </Card>
                         },
                         {
-                            estilos: { marginTop: '10px' },
+                           
                             titulo: '',
                             descripccion:
                                 <Card >
@@ -246,7 +244,7 @@ const Index = (props) => {
                                 </Card>
                         },
                         {
-                            estilos: { marginTop: '10px' },
+                            
                             titulo: '',
                             descripccion:
                                 <Card >
@@ -263,7 +261,7 @@ const Index = (props) => {
                                 </Card>
                         },
                         {
-                            estilos: { marginTop: '10px' },
+                            
                             titulo: '',
                             descripccion:
                                 <Card >
@@ -287,7 +285,7 @@ const Index = (props) => {
 
 
             <VisualizaccionDatos
-                estilos={{ background: '#1565c0', color: 'white', height: 300 }}
+                estilos={{ background: '#1565c0', color: 'white', padding: '20px 50px 200px 50px' }}
                 datos={
                     [
                         {

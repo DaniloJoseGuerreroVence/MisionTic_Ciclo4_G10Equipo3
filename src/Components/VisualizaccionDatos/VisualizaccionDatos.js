@@ -1,17 +1,25 @@
 import React, { Component } from 'react';
 
 class VisualizaccionDatos extends Component {
-    state = {}
-    render() {
-        return (
-            <div className="row" style={this.props.estilos}>
+    state = { random: 0 }
 
+    render() {    
+        // console.log(this.props.datos) ;
+        const min = 1;
+        const max = 1000000;
+        const rand = Math.round(min + Math.random() * (max - min));
+        // this.setState({ random: this.state.random + rand }
+        return (
+            <div className={"row "+this.props.clases} style={this.props.estilos}>
+                
+                {/* {this.props.datos} */}
                 {
                     this.props.datos.map(
-                        (dato) => {
-                            //style={{border: '1px solid Black',}}
+                        (dato) => {   
+                                                   
+
                             return (
-                                <div className="col-3" style={dato.estilos}>
+                                <div className="col-xs-12 col-sm-6 col-md-4 col-lg-3" style={{margin:'10px 0px 10px 0px'}}>
                                     <div className="fs-4 " > {dato.titulo}  </div>
                                     <div > {dato.descripccion}</div>
                                 </div>

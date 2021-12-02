@@ -8,13 +8,13 @@ const BarraNavegaccion = (props) => {
         <div>
             <nav>
                 <ul>
-                    <li>
+                    <li >
                         <Link to="/">Home</Link>
                     </li>
-                    <li>
+                    <li >
                         <Link to="/contacto">contacto</Link>
                     </li>
-                    <li>
+                    <li >
                         <Link to="/users">Users</Link>
                     </li>
                 </ul>
