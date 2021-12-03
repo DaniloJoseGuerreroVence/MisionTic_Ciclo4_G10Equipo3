@@ -5,9 +5,10 @@ class VisualizaccionDatos extends Component {
 
     render() {    
         // console.log(this.props.datos) ;
-        const min = 1;
-        const max = 1000000;
-        const rand = Math.round(min + Math.random() * (max - min));
+        // const min = 1;
+        // const max = 1000000;
+        // const rand = Math.round(min + Math.random() * (max - min));
+
         // this.setState({ random: this.state.random + rand }
         return (
             <div className={"row "+this.props.clases} style={this.props.estilos}>
@@ -17,7 +18,7 @@ class VisualizaccionDatos extends Component {
                     this.props.datos.map(
                         (dato) => {   
                                                    
-
+                            // col-lg-10 offset-md-1
                             return (
                                 <div className="col-xs-12 col-sm-6 col-md-4 col-lg-3" style={{margin:'10px 0px 10px 0px'}}>
                                     <div className="fs-4 " > {dato.titulo}  </div>

@@ -50,13 +50,13 @@ const Index = (props) => {
                 {/*ejemplo uso de ventana modal */}
                 {/* <VentanaModal textoBoton= "Presioname" titulo="Prueba" mensaje="I will not close if you click outside me"/>  */}
 
-                <Info estilo="cabezera" />
+                <Info estilo="cabezera col-lg-12" />
 
                 <Navbar style={{ background: '#0d59af', }} variant="dark" expand="lg">
-                    <Container fluid>                        
+                    <Container fluid>
                         <Navbar.Brand >
 
-                            <span className="fs-1 col-md-4 offset-4" >Badminton Play</span>
+                            <span className="fs-1 col-lg-4 offset-4" >Badminton Play</span>
                             {/* <span style={{ fontSize: 50, marginLeft: 185 }} >Badminton Play</span> */}
 
                         </Navbar.Brand>
@@ -133,15 +133,15 @@ const Index = (props) => {
         adasdasdasdad
       </div> */}
 
-{/* <span class="fs-1 col-md-4 offset-4" >Badminton Play</span> */}
+            {/* <span class="fs-1 col-md-4 offset-4" >Badminton Play</span> */}
 
             <VisualizaccionDatos
                 //border: '1px solid #d0d0d0'
                 // estilos={{ margin: '50px 250px 50px 250px' }}
-                clases="col-md-10 offset-md-1"
+                clases="col-lg-10 offset-lg-1"
                 datos={
                     [
-                        {                            
+                        {
                             titulo: '',
                             descripccion:
                                 <Card >
@@ -158,7 +158,7 @@ const Index = (props) => {
                                 </Card>
                         },
                         {
-                            
+
                             titulo: '',
                             descripccion:
                                 <Card >
@@ -175,7 +175,7 @@ const Index = (props) => {
                                 </Card>
                         },
                         {
-                           
+
                             titulo: '',
                             descripccion:
                                 <Card >
@@ -192,7 +192,7 @@ const Index = (props) => {
                                 </Card>
                         },
                         {
-                           
+
                             titulo: '',
                             descripccion:
                                 <Card >
@@ -210,7 +210,7 @@ const Index = (props) => {
                         },
 
                         {
-                           
+
                             titulo: '',
                             descripccion:
                                 <Card >
@@ -227,7 +227,7 @@ const Index = (props) => {
                                 </Card>
                         },
                         {
-                           
+
                             titulo: '',
                             descripccion:
                                 <Card >
@@ -244,7 +244,7 @@ const Index = (props) => {
                                 </Card>
                         },
                         {
-                            
+
                             titulo: '',
                             descripccion:
                                 <Card >
@@ -261,7 +261,7 @@ const Index = (props) => {
                                 </Card>
                         },
                         {
-                            
+
                             titulo: '',
                             descripccion:
                                 <Card >
@@ -285,6 +285,7 @@ const Index = (props) => {
 
 
             <VisualizaccionDatos
+                clases="col-lg-12 offset-lg-0"               
                 estilos={{ background: '#1565c0', color: 'white', padding: '20px 50px 200px 50px' }}
                 datos={
                     [
@@ -311,7 +312,7 @@ const Index = (props) => {
 
 
 
-            <Info estilo="pie" msg="© 2016 New Shop . All rights reserved | Design by W3layouts" />
+            <Info estilo="pie col-lg-12" msg="© 2021 Badminton Play. All rights reserved | Design by G17E3" />
 
         </div>
 
