@@ -1,0 +1,30 @@
+{
+    "NavDelPie": [
+        {
+            "titulo": "About",
+            "descripccion": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
+        },
+        {
+            "titulo": "My Account",
+            "descripccion": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
+        },
+        {
+            "titulo": "Information",
+            "descripccion": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
+        },
+        {
+            "titulo": "Contacts",
+            "descripccion": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
+        }
+    ],
+    "Apuestas": [
+        {
+            "titulo": "",
+            "descripccion": "<Tarjetas/>"
+        },
+        {
+            "titulo": "",
+            "descripccion": "<Tarjetas/>"
+        }
+    ]
+}

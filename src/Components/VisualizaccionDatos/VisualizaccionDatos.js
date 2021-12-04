@@ -11,7 +11,7 @@ class VisualizaccionDatos extends Component {
 
         // this.setState({ random: this.state.random + rand }
         return (
-            <div className={"row "+this.props.clases} style={this.props.estilos}>
+            <div className={this.props.clases} style={this.props.estilos}>
                 
                 {/* {this.props.datos} */}
                 {
@@ -20,7 +20,8 @@ class VisualizaccionDatos extends Component {
                                                    
                             // col-lg-10 offset-md-1
                             return (
-                                <div className="col-xs-12 col-sm-6 col-md-4 col-lg-3" style={{margin:'10px 0px 10px 0px'}}>
+                                // <div>
+                                <div className="col-xs-12 col-sm-6 col-md-4 col-lg-3" style={{float: 'right', margin:'10px 0px 10px 0px'}}>                                
                                     <div className="fs-4 " > {dato.titulo}  </div>
                                     <div > {dato.descripccion}</div>
                                 </div>
