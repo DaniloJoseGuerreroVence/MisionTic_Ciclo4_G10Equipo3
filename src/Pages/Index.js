@@ -7,7 +7,7 @@ import VisualizaccionDatos from '../Components/VisualizaccionDatos/';
 import BarraNavegaccion from '../Components/BarraNavegaccion/';
 import Carusel from '../Components/Carusel/';
 import Menu from '../Components/Menu/';
-import Tarjetas from '../Components/Tarjetas/';
+// import Tarjetas from '../Components/Tarjetas/';
 //import VentanaModal from './Components/VentanaModal/';
 
 
@@ -62,9 +62,11 @@ const Index = (props) => {
             <VisualizaccionDatos
                 //border: '1px solid #d0d0d0'
                 // estilos={{ margin: '50px 250px 50px 250px' }}
-                clases="row col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-xs-10 offset-xs-1"                
+                clases="row col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-xs-10 offset-xs-1" 
+                componente="Tarjeta"        
                 datos={json.Apuestas}
             />
+
 
 
 
