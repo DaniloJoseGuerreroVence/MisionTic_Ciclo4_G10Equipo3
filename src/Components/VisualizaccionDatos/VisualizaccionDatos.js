@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import Tarjetas from '../Tarjetas/';
 
 class VisualizaccionDatos extends Component {
     state = { random: 0 }
 
-    render() {    
+    render() {
         // console.log(this.props.datos) ;
         // const min = 1;
         // const max = 1000000;
@@ -11,18 +12,28 @@ class VisualizaccionDatos extends Component {
 
         // this.setState({ random: this.state.random + rand }
         return (
-            <div className={"row "+this.props.clases} style={this.props.estilos}>
-                
+            <div className={this.props.clases} style={this.props.estilos}>
+
                 {/* {this.props.datos} */}
                 {
                     this.props.datos.map(
-                        (dato) => {   
-                                                   
+                        (dato) => {
+
                             // col-lg-10 offset-md-1
                             return (
-                                <div className="col-xs-12 col-sm-6 col-md-4 col-lg-3" style={{margin:'10px 0px 10px 0px'}}>
-                                    <div className="fs-4 " > {dato.titulo}  </div>
-                                    <div > {dato.descripccion}</div>
+                                // <div>
+                                <div className="col-xs-12 col-sm-6 col-md-4 col-lg-3" style={{ float: 'right', margin: '10px 0px 10px 0px' }}>
+
+                                {
+                                    this.props.componente === 'Tarjeta' ?
+                                    <Tarjetas titulo={dato.titulo}  descripccion={dato.descripccion}/>                                 
+                                    :
+                                    <div>
+                                        <div className="fs-4 " > {dato.titulo}  </div>
+                                        <div>{dato.descripccion}</div>
+                                    </div>
+                                }
+
                                 </div>
                             );
                         }
