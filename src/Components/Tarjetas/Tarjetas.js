@@ -22,6 +22,7 @@ export default function Tarjetas(props) {
                 <Card.Text>
                     {props.descripccion}
                 </Card.Text>
+                <br/>
                 <Button variant="primary">Jugador 1</Button>{' '}
                 <Button variant="secondary">Empate</Button>{' '}
                 <Button variant="danger">Jugador 2</Button>
