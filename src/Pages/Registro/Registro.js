@@ -1,4 +1,5 @@
-import React, { useState } from "react"
+// import React, { useState } from "react"
+import React from "react"
 
 import json from "../../assets/others/Request.json";
 
@@ -8,7 +9,7 @@ import BarraNavegaccion from '../../Components/BarraNavegaccion/';
 // import Carusel from '../../Components/Carusel/';
 // import Menu from '../../Components/Menu/';
 
-import { Button,  Form, FormControl, InputGroup } from 'react-bootstrap';
+import { Button, Form, FormControl, InputGroup } from 'react-bootstrap';
 
 
 // const clik = () => {
@@ -22,8 +23,8 @@ import { Button,  Form, FormControl, InputGroup } from 'react-bootstrap';
 
 // }
 
-export default function Login(Props) {
-    const [login, setlogin] = useState();
+export default function Registro(Props) {
+    // const [login, setlogin] = useState();
 
 
 
@@ -32,24 +33,7 @@ export default function Login(Props) {
     const fnLogin = (e) => {
 
         // return(
-        e.preventDefault();
-        const tipoUsuario = e.target.tipoUsuario.value;
-
-        switch (tipoUsuario) {
-            case "Externo":
-                setlogin(json.LoginExtern)
-                break;
-            case "Interno":
-                setlogin(json.LoginIntern)
-                break;
-            case "Admin":
-                setlogin(json.LoginAdmin)
-                break;
-            default:
-                break;
-
-        }
-
+        e.preventDefault();       
 
 
 
@@ -67,14 +51,14 @@ export default function Login(Props) {
             {/*ejemplo uso de ventana modal */}
             {/* <VentanaModal textoBoton= "Presioname" titulo="Prueba" mensaje="I will not close if you click outside me"/>  */}
 
-            <Info login={login} estilo="cabezera col-lg-12" />
+            <Info estilo="cabezera col-lg-12" />
 
             {/* <Menu login={login} /> */}
-            <BarraNavegaccion login={login} />
+            <BarraNavegaccion />
 
             {/* <Carusel /> */}
 
-            <h1 style={{ textAlign: 'center' }}>Login Badminton Play</h1>
+            <h1 style={{ textAlign: 'center' }}>Registro en Badminton Play</h1>
 
             <div style={{ padding: '40px 0px 40px 0px', margin: '0% 35% 3% 35%', border: '1px solid', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
 
@@ -95,18 +79,13 @@ export default function Login(Props) {
                         </InputGroup>
                     </Form.Group>
 
+                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                        <InputGroup>
+                            <InputGroup.Text>**</InputGroup.Text>
+                            <FormControl type="password" id="inlineFormInputGroup2" placeholder="Confirma el Password" />
+                        </InputGroup>
+                    </Form.Group>                  
 
-                    <Form.Label>Tipo usuario</Form.Label>
-                    <Form.Select name="tipoUsuario" defaultValue="Choose...">
-                        <option>Choose...</option>
-                        <option>Externo</option>
-                        <option>Interno</option>
-                        <option>Admin</option>
-                    </Form.Select>
-
-                    <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label="Check me out" />
-                    </Form.Group>
 
                     <Button variant="primary" type="submit">
                         Iniciar session

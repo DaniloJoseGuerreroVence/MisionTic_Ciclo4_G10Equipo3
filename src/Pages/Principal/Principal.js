@@ -4,9 +4,9 @@ import json from "../../assets/others/Request.json";
 
 import Info from '../../Components/Info/';
 import VisualizaccionDatos from '../../Components/VisualizaccionDatos/';
-// import BarraNavegaccion from '../../Components/BarraNavegaccion/';
+import BarraNavegaccion from '../../Components/BarraNavegaccion/';
 import Carusel from '../../Components/Carusel/';
-import Menu from '../../Components/Menu/';
+// import Menu from '../../Components/Menu/';
 // import Tarjetas from '../Components/Tarjetas/';
 //import VentanaModal from './Components/VentanaModal/';
 
@@ -42,8 +42,7 @@ const Principal = (props) => {
     return (
         //  let csss ={background: '#1565c0', color: 'white', height: 300 };
         <div>
-            {props.d}
-            {/* <BarraNavegaccion /> */}
+            {/* {props.d} */}
 
             {/*ejemplo  uso de iconos */}
             {/* <Icon/> */}
@@ -53,7 +52,9 @@ const Principal = (props) => {
 
             <Info estilo="cabezera col-lg-12" />
 
-            <Menu />
+            {/* <Menu /> */}
+            <BarraNavegaccion />
+
 
             <Carusel />
 

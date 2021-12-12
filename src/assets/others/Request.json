@@ -2,7 +2,20 @@
 
      "LoginExtern" : {
         "Login": "true",
+        "Nombre":"Cliente 1",
         "TipoUsuario": "Externo"
+    },
+
+    "LoginIntern" : {
+        "Login": "true",
+        "Nombre":"Encargado 1",
+        "TipoUsuario": "Interno"
+    },
+
+    "LoginAdmin" : {
+        "Login": "true",
+        "Nombre":"Administrador 1",
+        "TipoUsuario": "Admin"
     },
 
 
