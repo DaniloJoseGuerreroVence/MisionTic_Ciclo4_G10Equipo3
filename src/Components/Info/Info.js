@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 // import PropTypes from 'prop-types'  ;
 import "./Info.css";
+// import { Link } from "react-router-dom";
+import BarraNavegaccion from '../BarraNavegaccion/BarraNavegaccion';
 
 
 class Info extends Component {
@@ -15,7 +17,7 @@ class Info extends Component {
         return (
             // <div style={{backgroundColor:'blue'}}>
 
-            <div className={this.props.estilo}>                
+            <div className={this.props.estilo}>
 
                 {/* 
                     <div class="top-left">
@@ -26,15 +28,15 @@ class Info extends Component {
                 <div class="top-right">
 
                     {
-                        this.props.msg !=='' ?
-                        <ul>
-                            <li>{this.props.msg}</li>
-                        </ul>
-                        :
-                        <ul>
-                            <li><a href="login.html">Inicia session</a></li>
-                            <li><a href="registered.html"> Crea tu cuenta </a></li>
-                        </ul>
+                        this.props.msg !== '' ?
+                            <ul>
+                                <li>{this.props.msg}</li>
+                            </ul>
+                            :
+                            <ul>
+                                {/* {"=> "}{this.props.login.TipoUsuario}{'_'} */}
+                                <BarraNavegaccion login={this.props.login} menu='superior' />
+                            </ul>
                     }
 
                 </div>
@@ -54,8 +56,10 @@ class Info extends Component {
 // }      
 
 
-Info.defaultProps = {     
-    msg:''
-} 
+Info.defaultProps = {
+    msg: '',
+    login: {Login:"false"}
+
+}
 
 export default Info

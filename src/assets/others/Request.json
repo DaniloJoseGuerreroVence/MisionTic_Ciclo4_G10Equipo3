@@ -1,4 +1,11 @@
 {
+
+     "LoginExtern" : {
+        "Login": "true",
+        "TipoUsuario": "Externo"
+    },
+
+
     "NavDelPie": [
         {
             "titulo": "About",
@@ -20,35 +27,51 @@
     "Apuestas": [
         {
             "titulo": "Master de Indonesia",
-            "descripccion": "Matsuyama  Vs Supajirakul"
+            "descripccion": "Matsuyama  Vs Supajirak",
+            "equipo1":"Matsuyama",
+            "equipo2":"Supajirak"
         },
         {
             "titulo": "Master de Indonesia",
-            "descripccion": "Matsuyama  Vs Supajirakul"
+            "descripccion": "Matsuyama  Vs Supajirak",
+            "equipo1":"Matsuyama",
+            "equipo2":"Supajirak"
         },
         {
             "titulo": "Master de Indonesia",
-            "descripccion": "Matsuyama  Vs Supajirakul"
+            "descripccion": "Matsuyama  Vs Supajirak",
+            "equipo1":"Matsuyama",
+            "equipo2":"Supajirak"
         },
         {
             "titulo": "Master de Indonesia",
-            "descripccion": "Matsuyama  Vs Supajirakul"
+            "descripccion": "Matsuyama  Vs Supajirak",
+            "equipo1":"Matsuyama",
+            "equipo2":"Supajirak"
         },
         {
             "titulo": "Master de Indonesia",
-            "descripccion": "Matsuyama  Vs Supajirakul"
+            "descripccion": "Matsuyama  Vs Supajirak",
+            "equipo1":"Matsuyama",
+            "equipo2":"Supajirak"
         },
         {
             "titulo": "Master de Indonesia",
-            "descripccion": "Matsuyama  Vs Supajirakul"
+            "descripccion": "Matsuyama  Vs Supajirak",
+            "equipo1":"Matsuyama",
+            "equipo2":"Supajirak"
         },
         {
             "titulo": "Master de Indonesia",
-            "descripccion": "Matsuyama  Vs Supajirakul"
+            "descripccion": "Matsuyama  Vs Supajirak",
+            "equipo1":"Matsuyama",
+            "equipo2":"Supajirak"
         },
         {
             "titulo": "Master de Indonesia",
-            "descripccion": "Matsuyama  Vs Supajirakul"
+            "descripccion": "Matsuyama  Vs Supajirak",
+            "equipo1":"Matsuyama",
+            "equipo2":"Supajirak"
         }
     ]
 }

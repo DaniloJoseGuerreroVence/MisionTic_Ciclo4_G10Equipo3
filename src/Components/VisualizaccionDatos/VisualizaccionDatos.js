@@ -26,7 +26,7 @@ class VisualizaccionDatos extends Component {
 
                                 {
                                     this.props.componente === 'Tarjeta' ?
-                                    <Tarjetas titulo={dato.titulo}  descripccion={dato.descripccion}/>                                 
+                                    <Tarjetas titulo={dato.titulo}  descripccion={dato.descripccion} equipo1={dato.equipo1} equipo2={dato.equipo2}/>                                 
                                     :
                                     <div>
                                         <div className="fs-4 " > {dato.titulo}  </div>

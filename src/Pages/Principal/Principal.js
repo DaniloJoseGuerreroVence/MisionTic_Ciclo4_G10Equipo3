@@ -1,12 +1,12 @@
 import React from 'react';
 
-import json from "../assets/others/Request.json";
+import json from "../../assets/others/Request.json";
 
-import Info from '../Components/Info/';
-import VisualizaccionDatos from '../Components/VisualizaccionDatos/';
-import BarraNavegaccion from '../Components/BarraNavegaccion/';
-import Carusel from '../Components/Carusel/';
-import Menu from '../Components/Menu/';
+import Info from '../../Components/Info/';
+import VisualizaccionDatos from '../../Components/VisualizaccionDatos/';
+// import BarraNavegaccion from '../../Components/BarraNavegaccion/';
+import Carusel from '../../Components/Carusel/';
+import Menu from '../../Components/Menu/';
 // import Tarjetas from '../Components/Tarjetas/';
 //import VentanaModal from './Components/VentanaModal/';
 
@@ -38,12 +38,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // }
 
 
-const Index = (props) => {
+const Principal = (props) => {
     return (
         //  let csss ={background: '#1565c0', color: 'white', height: 300 };
         <div>
-
-            <BarraNavegaccion />
+            {props.d}
+            {/* <BarraNavegaccion /> */}
 
             {/*ejemplo  uso de iconos */}
             {/* <Icon/> */}
@@ -62,8 +62,8 @@ const Index = (props) => {
             <VisualizaccionDatos
                 //border: '1px solid #d0d0d0'
                 // estilos={{ margin: '50px 250px 50px 250px' }}
-                clases="row col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-xs-10 offset-xs-1" 
-                componente="Tarjeta"        
+                clases="row col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-xs-10 offset-xs-1"
+                componente="Tarjeta"
                 datos={json.Apuestas}
             />
 
@@ -72,7 +72,7 @@ const Index = (props) => {
 
             <VisualizaccionDatos
                 clases="col-lg-12 offset-lg-0 col-md-12 offset-md-0 col-sm-12 offset-sm-0 col-xs-12 offset-xs-0"
-                estilos={{overflow: 'hidden', background: '#1565c0', color: 'white', padding: '20px 50px 200px 50px' }}
+                estilos={{ overflow: 'hidden', background: '#1565c0', color: 'white', padding: '20px 50px 200px 50px' }}
                 datos={json.NavDelPie}
             />
 
@@ -84,4 +84,4 @@ const Index = (props) => {
     );
 }
 
-export default Index;
+export default Principal;

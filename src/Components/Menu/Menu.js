@@ -1,5 +1,7 @@
 import React from 'react';
 import { Button,Nav, Navbar, Container, Form, FormControl } from 'react-bootstrap';
+// import { Link } from "react-router-dom";
+import BarraNavegaccion from '../BarraNavegaccion/BarraNavegaccion';
 
 
 export default function Menu (props) {
@@ -22,7 +24,12 @@ export default function Menu (props) {
                         style={{ maxHeight: '100px' }}
                         navbarScroll
                     >
-                        <Nav.Link style={{ marginLeft: 150 }} href="#action1">Home</Nav.Link>
+                        {/* <Nav.Link style={{ marginLeft: 150 }} href="/">Home</Nav.Link> */}
+
+                        <BarraNavegaccion />
+
+                        {/* <Link to="/">Home</Link> */}
+
 
                     </Nav>
 
