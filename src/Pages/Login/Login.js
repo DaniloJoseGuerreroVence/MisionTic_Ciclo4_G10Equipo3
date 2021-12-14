@@ -1,4 +1,5 @@
-import React, { useState } from "react"
+import React from "react"
+import { useNavigate } from "react-router-dom";
 
 import json from "../../assets/others/Request.json";
 
@@ -8,7 +9,7 @@ import BarraNavegaccion from '../../Components/BarraNavegaccion/';
 // import Carusel from '../../Components/Carusel/';
 // import Menu from '../../Components/Menu/';
 
-import { Button,  Form, FormControl, InputGroup } from 'react-bootstrap';
+import { Button, Form, FormControl, InputGroup } from 'react-bootstrap';
 
 
 // const clik = () => {
@@ -22,10 +23,11 @@ import { Button,  Form, FormControl, InputGroup } from 'react-bootstrap';
 
 // }
 
-export default function Login(Props) {
-    const [login, setlogin] = useState();
+export default function Login({ bus }) {
+    // const [login, setlogin] = useState("Desde el hijo ");
 
-
+    let login = "";
+    let navigate = useNavigate();
 
     // return <Name name={name}>;
 
@@ -37,19 +39,24 @@ export default function Login(Props) {
 
         switch (tipoUsuario) {
             case "Externo":
-                setlogin(json.LoginExtern)
+                login=json.LoginExtern
+
                 break;
             case "Interno":
-                setlogin(json.LoginIntern)
+                login=json.LoginIntern
+
                 break;
             case "Admin":
-                setlogin(json.LoginAdmin)
+                login=json.LoginAdmin
+
                 break;
             default:
-                break;
+                login="vacio"
 
         }
-
+        // console.log("login->"+tipoUsuario)
+        // console.log(login)
+        bus(login,navigate);
 
 
 
@@ -58,6 +65,7 @@ export default function Login(Props) {
     return (
 
         <div>
+            {/* { props.bus(login,navigate)} */}
             {/* <BarraNavegaccion /> */}
 
 
@@ -80,18 +88,18 @@ export default function Login(Props) {
 
 
 
-                <Form onSubmit={fnLogin}>
+                <Form onSubmit={fnLogin} >
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <InputGroup>
                             <InputGroup.Text>@</InputGroup.Text>
-                            <FormControl id="inlineFormInputGroup" placeholder="Email" />
+                            <FormControl placeholder="Email" />
                         </InputGroup>
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <InputGroup>
                             <InputGroup.Text>**</InputGroup.Text>
-                            <FormControl type="password" id="inlineFormInputGroup2" placeholder="Password" />
+                            <FormControl type="password" placeholder="Password" />
                         </InputGroup>
                     </Form.Group>
 

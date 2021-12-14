@@ -18,7 +18,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 //ejemplo uso de iconos
 
-// class Icon extends React.Component {
+// classs Icon extends React.Component {
 //   render() {
 //     return <h3> Lets go for a <FaBeer style={{color: 'blue',}} />? </h3>
 //   }
@@ -50,10 +50,14 @@ const Principal = (props) => {
             {/*ejemplo uso de ventana modal */}
             {/* <VentanaModal textoBoton= "Presioname" titulo="Prueba" mensaje="I will not close if you click outside me"/>  */}
 
-            <Info estilo="cabezera col-lg-12" />
+            <Info login={props.login} estilo="cabezera col-lg-12" />
 
             {/* <Menu /> */}
-            <BarraNavegaccion />
+            {
+            // console.log("Ppal->")
+            // console.log(props.login)
+            }
+            <BarraNavegaccion login={props.login} />
 
 
             <Carusel />

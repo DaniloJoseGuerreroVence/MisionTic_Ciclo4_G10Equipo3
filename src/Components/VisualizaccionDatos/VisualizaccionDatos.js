@@ -17,12 +17,12 @@ class VisualizaccionDatos extends Component {
                 {/* {this.props.datos} */}
                 {
                     this.props.datos.map(
-                        (dato) => {
+                        (dato, index) => {
 
                             // col-lg-10 offset-md-1
                             return (
                                 // <div>
-                                <div className="col-xs-12 col-sm-6 col-md-4 col-lg-3" style={{ float: 'right', margin: '10px 0px 10px 0px' }}>
+                                <div key={index} className="col-xs-12 col-sm-6 col-md-4 col-lg-3" style={{ float: 'right', margin: '10px 0px 10px 0px' }}>
 
                                 {
                                     this.props.componente === 'Tarjeta' ?

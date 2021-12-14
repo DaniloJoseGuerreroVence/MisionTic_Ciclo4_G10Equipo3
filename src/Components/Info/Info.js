@@ -25,7 +25,7 @@ class Info extends Component {
                     </div> 
                 */}
 
-                <div class="top-right">
+                <div className="top-right">
 
                     {
                         this.props.msg !== '' ?
