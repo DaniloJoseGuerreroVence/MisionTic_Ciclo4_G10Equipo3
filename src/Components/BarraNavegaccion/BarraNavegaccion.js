@@ -7,6 +7,27 @@ import Menu from '../Menu/';
 
 function BarraNavegaccion(props) {
 
+    // const [saldo, Setsaldo] = useState({ saldo: 0 });
+
+    const recibirSaldo = (saldoRecarga) => {
+        // Setsaldo(saldoRecarga.saldo)
+        console.log("desde barraN")
+        console.log(saldoRecarga.saldo)
+        props.bus(saldoRecarga.saldo)
+        // console.log(props.bus)      
+
+
+
+    }
+
+    // useEffect(() => {
+
+    //     recibirSaldo(saldo.saldo);
+
+    // });
+
+
+
     return (
         <div>
             {
@@ -14,7 +35,8 @@ function BarraNavegaccion(props) {
 
                     props.login.Login === 'true' ? (
                         <div>
-                            <span>Bienvenido: {props.login.Nombre} ({props.login.TipoUsuario}) , su saldo es $0.00  </span><Link style={{ color: 'White', textDecoration: 'none' }} to="/logout">Cerrar session</Link>
+                            
+                            <span>Bienvenido: {props.login.Nombre} ({props.login.TipoUsuario}) , su saldo es ${props.saldo},</span><Link style={{ color: 'White', textDecoration: 'none' }} to="/logout">Cerrar session</Link>
                         </div>
                     )
                         :
@@ -24,24 +46,11 @@ function BarraNavegaccion(props) {
                                 <Link style={{ color: 'White', textDecoration: 'none' }} to="/Registro">Crea tu cuenta</Link>
                             </div>
                         )
-
-
-
-
-
-
-
                 ) : (
-
-
-
-                    <Menu tipo={props.login.TipoUsuario} />
-
-
+                    <>                    
+                    <Menu bus={recibirSaldo} tipo={props.login.TipoUsuario} />
+                    </>
                 )
-
-
-
             }
         </div >
     );

@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 // import PropTypes from 'prop-types'  ;
 import "./Info.css";
 // import { Link } from "react-router-dom";
 import BarraNavegaccion from '../BarraNavegaccion/BarraNavegaccion';
 
 
-class Info extends Component {
+function Info(props) {
 
     //No es Obligatorio si se usan defaultProps
     // constructor(props){  
@@ -13,40 +13,48 @@ class Info extends Component {
     //     }  
 
 
-    render() {
-        return (
-            // <div style={{backgroundColor:'blue'}}>
 
-            <div className={this.props.estilo}>
 
-                {/* 
+    // const saldoR = (saldo) => {
+    //     console.log("desde info ")
+    //     console.log(saldo)
+
+    // }
+
+    return (
+
+        // <div style={{backgroundColor:'blue'}}>
+
+        <div className={props.estilo}>
+
+            {/* 
                     <div class="top-left">
                         <span> Help 018000-123-1234 </span>
                     </div> 
                 */}
 
-                <div className="top-right">
+            <div className="top-right">
 
-                    {
-                        this.props.msg !== '' ?
-                            <ul>
-                                <li>{this.props.msg}</li>
-                            </ul>
-                            :
-                            <ul>
-                                {/* {"=> "}{this.props.login.TipoUsuario}{'_'} */}
-                                <BarraNavegaccion login={this.props.login} menu='superior' />
-                            </ul>
-                    }
-
-                </div>
+                {
+                    props.msg !== '' ?
+                        <ul>
+                            <li>{props.msg}</li>
+                        </ul>
+                        :
+                        <ul>
+                            {/* {"=> "}{this.props.login.TipoUsuario}{'_'} */}
+                            <BarraNavegaccion saldo={props.saldo} login={props.login} menu='superior' />
+                        </ul>
+                }
 
             </div>
 
+        </div>
 
 
-        );
-    }
+
+    );
+
 }
 
 
@@ -58,7 +66,7 @@ class Info extends Component {
 
 Info.defaultProps = {
     msg: '',
-    login: {Login:"false"}
+    login: { Login: "false" }
 
 }
 

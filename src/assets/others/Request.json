@@ -1,24 +1,36 @@
 {
-
-     "LoginExtern" : {
+    "LoginExtern": {
         "Login": "true",
-        "Nombre":"Cliente 1",
+        "Nombre": "Cliente 1",
         "TipoUsuario": "Externo"
     },
-
-    "LoginIntern" : {
+    "LoginIntern": {
         "Login": "true",
-        "Nombre":"Encargado 1",
+        "Nombre": "Encargado 1",
         "TipoUsuario": "Interno"
     },
-
-    "LoginAdmin" : {
+    "LoginAdmin": {
         "Login": "true",
-        "Nombre":"Administrador 1",
+        "Nombre": "Administrador 1",
         "TipoUsuario": "Admin"
     },
-
-
+    "ReporteApuestas": [
+        {
+            "_id":1,
+            "fechaApuesta":"15/12/2021" ,
+            "fechaMaxCancelaccion":"17/12/2021" ,
+            "valorApuesta":5000 ,
+            "resultadoApuesta":"Pendiente"
+        },
+        {
+            "_id":2,
+            "fechaApuesta":"12/12/2021" ,
+            "fechaMaxCancelaccion":"15/12/2021" ,
+            "valorApuesta":10000 ,
+            "resultadoApuesta":"Equipo 1"
+        }
+       
+    ],
     "NavDelPie": [
         {
             "titulo": "About",
@@ -41,50 +53,50 @@
         {
             "titulo": "Master de Indonesia",
             "descripccion": "Matsuyama  Vs Supajirak",
-            "equipo1":"Matsuyama",
-            "equipo2":"Supajirak"
+            "equipo1": "Matsuyama",
+            "equipo2": "Supajirak"
         },
         {
             "titulo": "Master de Indonesia",
             "descripccion": "Matsuyama  Vs Supajirak",
-            "equipo1":"Matsuyama",
-            "equipo2":"Supajirak"
+            "equipo1": "Matsuyama",
+            "equipo2": "Supajirak"
         },
         {
             "titulo": "Master de Indonesia",
             "descripccion": "Matsuyama  Vs Supajirak",
-            "equipo1":"Matsuyama",
-            "equipo2":"Supajirak"
+            "equipo1": "Matsuyama",
+            "equipo2": "Supajirak"
         },
         {
             "titulo": "Master de Indonesia",
             "descripccion": "Matsuyama  Vs Supajirak",
-            "equipo1":"Matsuyama",
-            "equipo2":"Supajirak"
+            "equipo1": "Matsuyama",
+            "equipo2": "Supajirak"
         },
         {
             "titulo": "Master de Indonesia",
             "descripccion": "Matsuyama  Vs Supajirak",
-            "equipo1":"Matsuyama",
-            "equipo2":"Supajirak"
+            "equipo1": "Matsuyama",
+            "equipo2": "Supajirak"
         },
         {
             "titulo": "Master de Indonesia",
             "descripccion": "Matsuyama  Vs Supajirak",
-            "equipo1":"Matsuyama",
-            "equipo2":"Supajirak"
+            "equipo1": "Matsuyama",
+            "equipo2": "Supajirak"
         },
         {
             "titulo": "Master de Indonesia",
             "descripccion": "Matsuyama  Vs Supajirak",
-            "equipo1":"Matsuyama",
-            "equipo2":"Supajirak"
+            "equipo1": "Matsuyama",
+            "equipo2": "Supajirak"
         },
         {
             "titulo": "Master de Indonesia",
             "descripccion": "Matsuyama  Vs Supajirak",
-            "equipo1":"Matsuyama",
-            "equipo2":"Supajirak"
+            "equipo1": "Matsuyama",
+            "equipo2": "Supajirak"
         }
     ]
 }

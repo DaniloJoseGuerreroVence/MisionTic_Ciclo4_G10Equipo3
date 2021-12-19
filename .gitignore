@@ -2,6 +2,8 @@
 
 # dependencies
 /node_modules
+/reto_ciclo4_BackEnd/node_modules
+
 /.pnp
 .pnp.js
 

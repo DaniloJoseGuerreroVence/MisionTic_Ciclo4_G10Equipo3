@@ -1,16 +1,23 @@
 import React from "react";
 import { Table } from "react-bootstrap";
 
+import VentanaModal from '../VentanaModal/';
+
 const Tabla = ({
   columnas = [],
   registros = [],
   botones = true,
-  bus,
-  campos=[],
+  busEliminar,
+  busActualizar,
+  campos = [],
 }) => {
-  const click_eliminar = (e) => {
-    bus(e.target.id);
-  };
+  // const click_eliminar = (e) => {
+  //   busEliminar(e.target.id);
+  // };
+
+  // const click_actualizar = (e) => {
+  //   busActualizar(e.target.id);
+  // };
 
   return (
     <Table striped bordered hover>
@@ -30,10 +37,11 @@ const Tabla = ({
               })}
               {botones ? (
                 <td>
-                  <button>Actualizar</button>
-                  <button id={registro._id} onClick={click_eliminar}>
+                  {/* <button>Actualizar</button> */}
+                  {/* <button id={registro._id} onClick={click_eliminar}>
                     Eliminar
-                  </button>
+                  </button> */}
+                  <VentanaModal id={registro._id} variant="danger" textoBoton="Eliminar" textoBotonModal="Cancelar Apuesta" titulo="Cancelar Apuesta" />
                 </td>
               ) : null}
             </tr>

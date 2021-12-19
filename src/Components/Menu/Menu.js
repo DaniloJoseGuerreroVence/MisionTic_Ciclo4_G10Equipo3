@@ -1,10 +1,21 @@
 import React from 'react';
 import { Button, Nav, Navbar, Container, Form, FormControl, NavDropdown } from 'react-bootstrap';
 import { Link } from "react-router-dom";
+
+
+import VentanaModal from '../VentanaModal/';
 // import BarraNavegaccion from '../BarraNavegaccion/';
 
 
 export default function Menu(props) {
+
+
+    const recargar = (saldo) => {
+
+        console.log(saldo)
+        props.bus(saldo)
+
+    }
 
     return (
 
@@ -38,8 +49,8 @@ export default function Menu(props) {
                                             APUESTAS
                                         </NavDropdown.Item>
                                         <NavDropdown.Divider />
-                                        <Link className="dropdown-item" to="/">Adicionar saldo</Link>
-                                        <Link className="dropdown-item" to="/">Ver dashboard</Link>
+                                        <VentanaModal bus={recargar} clases="dropdown-item" variant="Link" textoBoton="Adicionar saldo" textoBotonModal="Recargar" titulo="Recargar Saldo" />
+                                        <Link className="dropdown-item" to="/VerApuesta">Ver reportes</Link>
 
                                     </NavDropdown>
                                 </>
@@ -56,7 +67,7 @@ export default function Menu(props) {
                                                 EVENTOS
                                             </NavDropdown.Item>
                                             <NavDropdown.Divider />
-                                            <Link className="dropdown-item" to="/">Configurar evento</Link>
+                                            <VentanaModal clases="dropdown-item" variant="Link" textoBoton="Configurar evento" textoBotonModal="Crear evento" titulo="Configurar evento" />                                           
                                             <Link className="dropdown-item" to="/">Reportes</Link>
 
                                         </NavDropdown>

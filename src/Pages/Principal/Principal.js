@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 
 import json from "../../assets/others/Request.json";
 
@@ -39,10 +39,57 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const Principal = (props) => {
+    const [saldo, Setsaldo] = useState(props.saldor);
+    const [apuestas, setApuestas] = useState([]);
+
+
+    // let navigate = useNavigate();
+  
+    useEffect(() => {
+    //   if (!token) {
+    //     navigate("/");
+    //   }
+      obtener_apuesta()
+    });
+  
+    const obtener_apuesta = () => {
+      fetch("http://localhost:8080/api/apuestas", {
+        method: 'GET'
+        // headers: {
+        //   'auth-token-jwt': token
+        // }
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+        //   setApuestas(data);
+        });
+    }
+  
+
+    
+
+
+
+
+    
+
+    const recibirSaldo = (saldoRecarga) => {
+        // console.log(saldoRecarga)
+        Setsaldo(parseInt(saldo)+parseInt(saldoRecarga))
+        console.log("desde ppal")
+        console.log(parseInt(saldo)+parseInt(saldoRecarga))
+        props.bus(parseInt(saldo)+parseInt(saldoRecarga))
+        // console.log(props.bus)       
+
+
+    }
+
     return (
         //  let csss ={background: '#1565c0', color: 'white', height: 300 };
         <div>
-            {/* {props.d} */}
+            {/* {apuestas.apuestass} */}
+            
 
             {/*ejemplo  uso de iconos */}
             {/* <Icon/> */}
@@ -50,14 +97,14 @@ const Principal = (props) => {
             {/*ejemplo uso de ventana modal */}
             {/* <VentanaModal textoBoton= "Presioname" titulo="Prueba" mensaje="I will not close if you click outside me"/>  */}
 
-            <Info login={props.login} estilo="cabezera col-lg-12" />
+            <Info saldo={saldo} login={props.login} estilo="cabezera col-lg-12" />
 
             {/* <Menu /> */}
             {
             // console.log("Ppal->")
             // console.log(props.login)
             }
-            <BarraNavegaccion login={props.login} />
+            <BarraNavegaccion bus={recibirSaldo} login={props.login} />
 
 
             <Carusel />
