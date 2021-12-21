@@ -4,6 +4,7 @@ const rutas = express.Router();
 
 const Frutas = require("../models/Fruta");
 const Usuario = require("../models/Usuario");
+const SaldosUsuarios = require("../models/SaldosUsuarios");
 const Notificacion = require('../models/Notificacion')
 
 const obtener_frutas = async () => {
@@ -22,6 +23,22 @@ rutas.get("/get_frutas/:id", async (req, res) => {
   res.json(fruta);
 });
 
+
+
+rutas.get("/obtener_saldo/:id", async (req, res) => {
+  let usuario_id = req.params.id;
+  let saldo = await SaldosUsuarios.findOne({idUsuario:usuario_id});
+  // let saldo = await SaldosUsuarios.aggregate([{$sum: {$recarga}}]);
+
+
+
+
+  res.json(saldo);
+});
+
+
+
+
 rutas.post("/crear_fruta", async (req, res) => {
   let body = req.body;
   let fruta = new Frutas(body);
@@ -29,6 +46,18 @@ rutas.post("/crear_fruta", async (req, res) => {
   await fruta.save();
 
   res.json(fruta);
+});
+
+rutas.post("/crear_saldo", async (req, res) => {
+  let body = req.body;
+  let saldoUsuario = new SaldosUsuarios(body);
+
+  // console.log(body);
+  // console.log(saldoUsuario);
+
+  await saldoUsuario.save();
+
+  res.json(saldoUsuario);
 });
 
 rutas.delete("/eliminar_fruta/:id_fruta", async (req, res) => {
@@ -72,27 +101,7 @@ rutas.get("/get_usuario/:id_usuario", async (req, res) => {
   res.json(usuarios);
 });
 
-rutas.post("/crear_usuario", async (req, res) => {
-  let body = req.body;
 
-  let salto = await bcrypt.genSalt(10);
-
-  let password = await bcrypt.hash(body.password, salto);
-
-  let nuevo_usuario = {
-    nombre: body.nombre,
-    correo: body.correo,
-    celular: body.celular,
-    rol: body.rol,
-    password: password,
-  };
-
-  let usuario = new Usuario(nuevo_usuario);
-
-  await usuario.save();
-
-  res.json(usuario);
-});
 
 rutas.get('/get_notificacion/:id_usuario', async (req, res) => {
 

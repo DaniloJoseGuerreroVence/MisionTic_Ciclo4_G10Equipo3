@@ -39,7 +39,7 @@ export default function Menu(props) {
 
                         {
 
-                            props.tipo === 'Externo' ? (
+                            props.login.TipoUsuario === 'Externo' ? (
                                 <>
                                     <Link className="nav-link" to="/">Home</Link>
                                     {/* <Nav.Link href="#action1">Home</Nav.Link> */}
@@ -49,14 +49,14 @@ export default function Menu(props) {
                                             APUESTAS
                                         </NavDropdown.Item>
                                         <NavDropdown.Divider />
-                                        <VentanaModal bus={recargar} clases="dropdown-item" variant="Link" textoBoton="Adicionar saldo" textoBotonModal="Recargar" titulo="Recargar Saldo" />
+                                        <VentanaModal login={props.login} clases="dropdown-item" variant="Link" textoBoton="Adicionar saldo" textoBotonModal="Recargar" titulo="Recargar Saldo" />
                                         <Link className="dropdown-item" to="/VerApuesta">Ver reportes</Link>
 
                                     </NavDropdown>
                                 </>
 
                             )
-                                : props.tipo === 'Interno' ? (
+                                : props.login.TipoUsuario === 'Interno' ? (
 
                                     <>
                                         <Link className="nav-link" to="/">Home</Link>
@@ -67,14 +67,14 @@ export default function Menu(props) {
                                                 EVENTOS
                                             </NavDropdown.Item>
                                             <NavDropdown.Divider />
-                                            <VentanaModal clases="dropdown-item" variant="Link" textoBoton="Configurar evento" textoBotonModal="Crear evento" titulo="Configurar evento" />                                           
+                                            <VentanaModal clases="dropdown-item" variant="Link" textoBoton="Configurar evento" textoBotonModal="Crear evento" titulo="Configurar evento" />
                                             <Link className="dropdown-item" to="/">Reportes</Link>
 
                                         </NavDropdown>
                                     </>
 
                                 ) :
-                                    props.tipo === 'Admin' ? (
+                                    props.login.TipoUsuario === 'Admin' ? (
                                         <>
                                             <Link className="nav-link" to="/">Home</Link>
                                             {/* <Nav.Link href="#action1">Home</Nav.Link> */}

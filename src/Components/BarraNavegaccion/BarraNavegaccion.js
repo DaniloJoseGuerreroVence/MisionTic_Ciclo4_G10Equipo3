@@ -33,7 +33,7 @@ function BarraNavegaccion(props) {
             {
                 props.menu === 'superior' ? (
 
-                    props.login.Login === 'true' ? (
+                    props.login.token !== undefined ? (
                         <div>
                             
                             <span>Bienvenido: {props.login.Nombre} ({props.login.TipoUsuario}) , su saldo es ${props.saldo},</span><Link style={{ color: 'White', textDecoration: 'none' }} to="/logout">Cerrar session</Link>
@@ -48,7 +48,7 @@ function BarraNavegaccion(props) {
                         )
                 ) : (
                     <>                    
-                    <Menu bus={recibirSaldo} tipo={props.login.TipoUsuario} />
+                    <Menu bus={recibirSaldo} login={props.login} />
                     </>
                 )
             }

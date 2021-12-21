@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import json from "../../assets/others/Request.json";
 
+
 import Info from '../../Components/Info/';
 import VisualizaccionDatos from '../../Components/VisualizaccionDatos/';
 import BarraNavegaccion from '../../Components/BarraNavegaccion/';
@@ -30,6 +31,35 @@ export default function Login({ bus }) {
     let navigate = useNavigate();
 
     // return <Name name={name}>;
+    
+
+
+    const recibir_credenciales = (credenciales) => {
+        fetch("http://localhost:8080/api/login", {
+            method: "POST",
+            body: JSON.stringify(credenciales),
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+            .then((res) => res.json())
+            .catch((error) => console.error("Error:", error))
+            .then((response) => {
+                console.log(response);
+                if (response.token !== undefined) {
+                    // NotificationManager.info(response.mensaje);
+                    // setTimeout(() => {
+                        bus(response.token, navigate, response.id_usuario,response)
+                    // }, 3000);
+
+                } else {
+                    alert('credenciales invalidas')
+                }
+            });
+    };
+
+
+
 
     const fnLogin = (e) => {
 
@@ -37,26 +67,35 @@ export default function Login({ bus }) {
         e.preventDefault();
         const tipoUsuario = e.target.tipoUsuario.value;
 
+        const credenciales = {
+            correo: e.target.correo.value,
+            password: e.target.password.value
+        }
+
+        console.log(credenciales);
+
+        recibir_credenciales(credenciales);
+
         switch (tipoUsuario) {
             case "Externo":
-                login=json.LoginExtern
+                login = json.LoginExtern
 
                 break;
             case "Interno":
-                login=json.LoginIntern
+                login = json.LoginIntern
 
                 break;
             case "Admin":
-                login=json.LoginAdmin
+                login = json.LoginAdmin
 
                 break;
             default:
-                login="vacio"
+                login = "vacio"
 
         }
         // console.log("login->"+tipoUsuario)
         // console.log(login)
-        bus(login,navigate);
+        // bus(login, navigate);
 
 
 
@@ -92,14 +131,14 @@ export default function Login({ bus }) {
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <InputGroup>
                             <InputGroup.Text>@</InputGroup.Text>
-                            <FormControl placeholder="Email" />
+                            <FormControl name="correo" placeholder="Email" />
                         </InputGroup>
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <InputGroup>
                             <InputGroup.Text>**</InputGroup.Text>
-                            <FormControl type="password" placeholder="Password" />
+                            <FormControl name="password" type="password" placeholder="Password" />
                         </InputGroup>
                     </Form.Group>
 

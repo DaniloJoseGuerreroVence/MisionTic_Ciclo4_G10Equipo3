@@ -47,14 +47,39 @@ export default function VentanaModal(props) {
 
 
   const recargaSaldo = (e) => {
+    
+    // console.log(props.login)
 
     // let saldo = window.Recarga.monto.value
     let saldo = inputSaldo.current.value
 
     // alert("ww")
-    console.log("=>" + inputSaldo.current.value)
+    // console.log("=>" + inputSaldo.current.value)
     // console.log(window.Recarga.monto.value)
-    props.bus({ saldo })
+
+    let saldoUsu = {
+      idUsuario: props.login.id_usuario,
+      recarga: saldo
+    }
+    
+    console.log("=>")
+    console.log(saldoUsu)
+
+
+    fetch('http://localhost:8080/api/crear_saldo', {
+      method: 'POST',
+      body: JSON.stringify(saldoUsu),
+      headers: {
+        'Content-Type': 'application/json',
+        'auth-token-jwt': props.login.token
+      }
+    }).then(res => res.json())
+      .catch(error => console.error('Error:', error))
+      ;
+
+
+
+    // props.bus({ saldo })
     handleClose()
   }
 

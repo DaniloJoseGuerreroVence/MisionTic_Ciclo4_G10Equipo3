@@ -2,10 +2,8 @@ const mongoose = require('../db/Basedatos')
 
 const Schema = mongoose.Schema
 
-const usuarioSchema = new Schema({
-    nombre: String,
-    correo: String,
-    celular: String,
+const usuarioSchema = new Schema({    
+    correo: String,    
     rol: String,
     password: String
 })

@@ -10,6 +10,7 @@ import BarraNavegaccion from '../../Components/BarraNavegaccion/';
 // import Menu from '../../Components/Menu/';
 
 import { Button, Form, FormControl, InputGroup } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 
 // const clik = () => {
@@ -23,18 +24,55 @@ import { Button, Form, FormControl, InputGroup } from 'react-bootstrap';
 
 // }
 
-export default function Registro(Props) {
+export default function Registro({ token }) {
     // const [login, setlogin] = useState();
-
-
-
     // return <Name name={name}>;
+
+
+
+    let navigate = useNavigate();
+
+    // useEffect(() => {
+    //     if (!token) {
+    //         navigate('/')
+    //     }
+    // })
+
+    const datos_usuario = (usuario) => {
+        fetch("http://localhost:8080/api/crear_usuario", {
+            method: "POST",
+            body: JSON.stringify(usuario),
+            headers: {
+                "Content-Type": "application/json"
+                // 'auth-token-jwt': token
+            },
+        })
+            .then((res) => res.json())
+            .catch((error) => console.error("Error:", error))
+            .then((response) => {
+                navigate("/");
+            });
+    };
+
+
+
+
 
     const fnLogin = (e) => {
 
         // return(
-        e.preventDefault();       
+        e.preventDefault();
 
+        const usuario = {
+            correo: e.target.correo.value,
+            rol: "Externo",
+            password: e.target.password.value,
+            confirm_password: e.target.confirm_password.value
+        }
+
+        console.log(usuario);
+
+        datos_usuario(usuario);
 
 
     }
@@ -68,23 +106,23 @@ export default function Registro(Props) {
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <InputGroup>
                             <InputGroup.Text>@</InputGroup.Text>
-                            <FormControl id="inlineFormInputGroup" placeholder="Email" />
+                            <FormControl name="correo" placeholder="Email" />
                         </InputGroup>
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <InputGroup>
                             <InputGroup.Text>**</InputGroup.Text>
-                            <FormControl type="password" id="inlineFormInputGroup2" placeholder="Password" />
+                            <FormControl name="password" type="password"  placeholder="Password" />
                         </InputGroup>
                     </Form.Group>
 
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Group className="mb-3" controlId="formBasicPasswordConfirm">
                         <InputGroup>
                             <InputGroup.Text>**</InputGroup.Text>
-                            <FormControl type="password" id="inlineFormInputGroup2" placeholder="Confirma el Password" />
+                            <FormControl name="confirm_password" type="password"  placeholder="Confirma el Password" />
                         </InputGroup>
-                    </Form.Group>                  
+                    </Form.Group>
 
 
                     <Button variant="primary" type="submit">

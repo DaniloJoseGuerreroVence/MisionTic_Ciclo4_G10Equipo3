@@ -13,7 +13,7 @@ export default function Login({ bus }) {
 
     const fnLogout = (e) => {
 
-        login = { Login: "false" }
+        login = { token: undefined}
         bus(login, navigate);
     }
 

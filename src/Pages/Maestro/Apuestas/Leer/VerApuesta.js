@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Tab, Col, Row, ListGroup } from 'react-bootstrap';
 
 import json from "../../../../assets/others/Request.json";
@@ -42,6 +42,53 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const VerApuesta = ({ login, saldor, bus }) => {
     const [saldo, Setsaldo] = useState(saldor);
+    const [obtenerApuesta, SetobtenerApuesta] = useState([]);
+    // let data = [];
+
+   useEffect(() => {
+        // if (!login.token) {
+        //     navigate("/");
+        // }
+        obtener_saldo()
+    });
+
+
+    const obtener_apuesta = () => {
+        fetch("http://localhost:8080/api/apuestas", {
+            method: 'GET'
+            // headers: {
+            //   'auth-token-jwt': token
+            // }
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log("antes");
+                console.log(data);
+                console.log(obtenerApuesta);
+                SetobtenerApuesta(data.data);
+                // console.log("despues");
+                // console.log(obtenerApuesta);
+            });
+    }
+
+ 
+
+    const obtener_saldo = (saldoRecarga) => {
+        fetch(`http://localhost:8080/api/obtener_saldo/${login.id_usuario}`, {
+            method: 'GET',
+            headers: {
+                'auth-token-jwt': login.token
+            }
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                // console.log(data.recarga);
+                Setsaldo(data.recarga);
+            });
+    }
+
+
+
 
     const recibirSaldo = (saldoRecarga) => {
         Setsaldo(parseInt(saldo) + parseInt(saldoRecarga))
@@ -94,7 +141,8 @@ const VerApuesta = ({ login, saldor, bus }) => {
                             <ListGroup.Item style={{ background: "#3791f8" }} >
                                 REPORTES
                             </ListGroup.Item>
-                            <ListGroup.Item action href="#link1">
+                                {/* onClick={() => { obtener_apuesta(); }}  */}
+                            <ListGroup.Item onClick={() => { obtener_apuesta(); }} action href="#link1">
                                 Apuestas Activas
                             </ListGroup.Item>
                             <ListGroup.Item action href="#link2">
@@ -113,22 +161,26 @@ const VerApuesta = ({ login, saldor, bus }) => {
                             <Tab.Pane eventKey="#link1">
                                 <div style={{ margin: '0% 5% 5% 5%' }}>
                                     {/* busEliminar={}   busActualizar={} */}
-                                    <Tabla columnas={["Id apuesta", "fecha de la apuesta", "fecha maxima de cacelaccion", "Monto apostado", "Resultado de la apuesta", "acciones"]} campos={["_id", "fechaApuesta", "fechaMaxCancelaccion", "valorApuesta", "resultadoApuesta"]} registros={json.ReporteApuestas} />
+                                    <Tabla
+                                        columnas={["Id apuesta","Id usuario", "fecha de la apuesta", "fecha maxima de cacelaccion", "Monto apostado", "Resultado de la apuesta", "acciones"]}
+                                        campos={["_id","id_usuario", "fechaApuesta", "fechaMaxCancelaccion", "valorApuesta", "resultadoApuesta"]}
+                                        registros={obtenerApuesta} />
                                 </div>
                             </Tab.Pane>
                             <Tab.Pane eventKey="#link2">
                                 <div style={{ margin: '0% 5% 5% 5%' }}>
-                                    <Tabla columnas={["Id apuesta", "fecha de la apuesta", "fecha maxima de cacelaccion", "Monto apostado", "Resultado de la apuesta", "acciones"]} campos={["_id", "fechaApuesta", "fechaMaxCancelaccion", "valorApuesta", "resultadoApuesta"]} registros={json.ReporteApuestas} />
+                                    {/* {"=>"+data} */}
+                                    {/* <Tabla columnas={["Id apuesta", "fecha de la apuesta", "fecha maxima de cacelaccion", "Monto apostado", "Resultado de la apuesta", "acciones"]} campos={["_id", "fechaApuesta", "fechaMaxCancelaccion", "valorApuesta", "resultadoApuesta"]} registros={json.ReporteApuestas} /> */}
                                 </div>
                             </Tab.Pane>
                             <Tab.Pane eventKey="#link3">
                                 <div style={{ margin: '0% 5% 5% 5%' }}>
-                                    <Tabla columnas={["Id apuesta", "fecha de la apuesta", "fecha maxima de cacelaccion", "Monto apostado", "Resultado de la apuesta", "acciones"]} campos={["_id", "fechaApuesta", "fechaMaxCancelaccion", "valorApuesta", "resultadoApuesta"]} registros={json.ReporteApuestas} />
+                                    {/* <Tabla columnas={["Id apuesta", "fecha de la apuesta", "fecha maxima de cacelaccion", "Monto apostado", "Resultado de la apuesta", "acciones"]} campos={["_id", "fechaApuesta", "fechaMaxCancelaccion", "valorApuesta", "resultadoApuesta"]} registros={json.ReporteApuestas} /> */}
                                 </div>
                             </Tab.Pane>
                             <Tab.Pane eventKey="#link4">
                                 <div style={{ margin: '0% 5% 5% 5%' }}>
-                                    <Tabla columnas={["Id apuesta", "fecha de la apuesta", "fecha maxima de cacelaccion", "Monto apostado", "Resultado de la apuesta", "acciones"]} campos={["_id", "fechaApuesta", "fechaMaxCancelaccion", "valorApuesta", "resultadoApuesta"]} registros={json.ReporteApuestas} />
+                                    {/* <Tabla columnas={["Id apuesta", "fecha de la apuesta", "fecha maxima de cacelaccion", "Monto apostado", "Resultado de la apuesta", "acciones"]} campos={["_id", "fechaApuesta", "fechaMaxCancelaccion", "valorApuesta", "resultadoApuesta"]} registros={json.ReporteApuestas} /> */}
                                 </div>
                             </Tab.Pane>
                         </Tab.Content>

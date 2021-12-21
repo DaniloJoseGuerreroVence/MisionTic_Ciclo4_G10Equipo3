@@ -13,6 +13,8 @@ function App() {
 
   const [ObjSesionlogin, SetObjSesionlogin] = useState();
   const [saldoRecarga, SetsaldoRecarga] = useState(0);
+  const [id_usuario, setId_usuario] = useState("");
+  const [token, setToken] = useState("");
 
   const log_in = (ObjSesion, navigate) => {
     // console.log("Desde Padre " + ObjSesion)
@@ -35,17 +37,30 @@ function App() {
     // console.log(props.bus)    
   }
 
+
+
+  const recibir_token = (token, navegacion, id_usuario,response) => {
+    setToken(token);
+    setId_usuario(id_usuario)
+    SetObjSesionlogin(response)
+    navegacion("/");
+  };
+
+
+  
+
   return (
     <Router>
       <Routes>
         {/* <Route path="/login" element={<Login bus={log}/>} /> */}
-        <Route path="/login" element={<Login bus={log_in} />} />
+        {/* <Route path="/login" element={<Login bus={log_in} />} /> */}
+        <Route path="/login" element={<Login bus={recibir_token} />} />
         <Route path="/logout" element={<Logout bus={log_out} />} />
         <Route path="/Registro" element={<Registro />} />
         <Route path="/contacto" element={<div><BarraNavegaccion /> <h3>Contacto</h3></div>} />
         <Route path="/VerApuesta" element={<Reportes bus={recibirSaldo} saldor={saldoRecarga} login={ObjSesionlogin} />} />
         <Route path="/users" element={<div> <BarraNavegaccion /> <h3>users</h3></div>} />
-        <Route path="/" element={<Principal bus={recibirSaldo} saldor={saldoRecarga} login={ObjSesionlogin} />} />
+        <Route path="/" element={<Principal bus={recibirSaldo} login={ObjSesionlogin} />} />
       </Routes>
     </Router >
   );

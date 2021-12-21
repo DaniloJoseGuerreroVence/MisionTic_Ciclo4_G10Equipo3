@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 
 import json from "../../assets/others/Request.json";
 
@@ -10,7 +10,7 @@ import Carusel from '../../Components/Carusel/';
 // import Tarjetas from '../Components/Tarjetas/';
 //import VentanaModal from './Components/VentanaModal/';
 
-
+import { useNavigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 //import { Button, Carousel, Nav, Navbar, Container, Form, FormControl, Card } from 'react-bootstrap';
 // import { FaBeer } from 'react-icons/fa'; //ejemplo uso de iconos 
@@ -38,48 +38,48 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // }
 
 
-const Principal = (props) => {
-    const [saldo, Setsaldo] = useState(props.saldor);
-    const [apuestas, setApuestas] = useState([]);
+const Principal = ({ login = "", bus, saldor }) => {
+    const [saldo, Setsaldo] = useState(0);
+    // const [apuestas, setApuestas] = useState([]);
 
 
     // let navigate = useNavigate();
-  
+
     useEffect(() => {
-    //   if (!token) {
-    //     navigate("/");
-    //   }
-      obtener_apuesta()
-    });
-  
-    const obtener_apuesta = () => {
-      fetch("http://localhost:8080/api/apuestas", {
-        method: 'GET'
-        // headers: {
-        //   'auth-token-jwt': token
+        // if (!login.token) {
+        //     navigate("/");
         // }
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          console.log(data);
-        //   setApuestas(data);
-        });
+        obtener_saldo()
+    });
+
+    const obtener_saldo = (saldoRecarga) => {
+        fetch(`http://localhost:8080/api/obtener_saldo/${login.id_usuario}`, {
+            method: 'GET',
+            headers: {
+                'auth-token-jwt': login.token
+            }
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                // console.log(data.recarga);
+                Setsaldo(data.recarga);
+            });
     }
-  
-
-    
 
 
 
 
-    
+
+
+
+
 
     const recibirSaldo = (saldoRecarga) => {
         // console.log(saldoRecarga)
-        Setsaldo(parseInt(saldo)+parseInt(saldoRecarga))
+        Setsaldo(parseInt(saldo) + parseInt(saldoRecarga))
         console.log("desde ppal")
-        console.log(parseInt(saldo)+parseInt(saldoRecarga))
-        props.bus(parseInt(saldo)+parseInt(saldoRecarga))
+        console.log(parseInt(saldo) + parseInt(saldoRecarga))
+        bus(parseInt(saldo) + parseInt(saldoRecarga))
         // console.log(props.bus)       
 
 
@@ -89,7 +89,7 @@ const Principal = (props) => {
         //  let csss ={background: '#1565c0', color: 'white', height: 300 };
         <div>
             {/* {apuestas.apuestass} */}
-            
+
 
             {/*ejemplo  uso de iconos */}
             {/* <Icon/> */}
@@ -97,14 +97,14 @@ const Principal = (props) => {
             {/*ejemplo uso de ventana modal */}
             {/* <VentanaModal textoBoton= "Presioname" titulo="Prueba" mensaje="I will not close if you click outside me"/>  */}
 
-            <Info saldo={saldo} login={props.login} estilo="cabezera col-lg-12" />
+            <Info saldo={saldo} login={login} estilo="cabezera col-lg-12" />
 
             {/* <Menu /> */}
             {
-            // console.log("Ppal->")
-            // console.log(props.login)
+                // console.log("Ppal->")
+                // console.log(props.login)
             }
-            <BarraNavegaccion bus={recibirSaldo} login={props.login} />
+            <BarraNavegaccion bus={obtener_saldo} login={login} />
 
 
             <Carusel />
